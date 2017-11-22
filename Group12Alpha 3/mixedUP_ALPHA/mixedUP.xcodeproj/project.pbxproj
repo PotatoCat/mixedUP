@@ -34,6 +34,9 @@
 		01F3A0911FA94DC4001F570A /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */; };
 		0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB951FC50F9C00F85591 /* Drinks.swift */; };
 		0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */; };
+		0A1DCBB01FC5157100F85591 /* PointingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCBAF1FC5157100F85591 /* PointingGame.swift */; };
+		0A1DCBB21FC5159B00F85591 /* PointingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCBB11FC5159B00F85591 /* PointingGameViewController.swift */; };
+		0A1DCBB41FC515BB00F85591 /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCBB31FC515BB00F85591 /* GamesTableViewController.swift */; };
 		0A1EB3DE1FA96A2500E5418E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DA1FA96A2400E5418E /* Recipe.swift */; };
 		0A1EB3DF1FA96A2500E5418E /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */; };
 		0A1EB3E01FA96A2500E5418E /* ThemeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */; };
@@ -71,6 +74,9 @@
 		01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		0A1DCB951FC50F9C00F85591 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinkTrackerViewController.swift; sourceTree = "<group>"; };
+		0A1DCBAF1FC5157100F85591 /* PointingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointingGame.swift; sourceTree = "<group>"; };
+		0A1DCBB11FC5159B00F85591 /* PointingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointingGameViewController.swift; sourceTree = "<group>"; };
+		0A1DCBB31FC515BB00F85591 /* GamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewController.swift; sourceTree = "<group>"; };
 		0A1EB3DA1FA96A2400E5418E /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChanger.swift; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 		0A1DCB9B1FC5102200F85591 /* games */ = {
 			isa = PBXGroup;
 			children = (
+				0A1DCBB31FC515BB00F85591 /* GamesTableViewController.swift */,
+				0A1DCBB11FC5159B00F85591 /* PointingGameViewController.swift */,
+				0A1DCBAF1FC5157100F85591 /* PointingGame.swift */,
 			);
 			path = games;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 				0A1EB3E11FA96A2500E5418E /* RecipeViewController.swift in Sources */,
 				0108B9AE1FC33737007BBE2A /* CreatedRandomDrinkViewController.swift in Sources */,
 				017880411FA8060B007E040B /* FeaturesSettingsViewController.swift in Sources */,
+				0A1DCBB21FC5159B00F85591 /* PointingGameViewController.swift in Sources */,
 				01F3A0911FA94DC4001F570A /* SettingsTabBarViewController.swift in Sources */,
 				01F3A08F1FA942AD001F570A /* UserData.swift in Sources */,
 				0108B9AA1FC2818F007BBE2A /* AlcoholSelectTableViewController.swift in Sources */,
@@ -358,12 +368,14 @@
 				0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */,
 				0108B9B41FC4EA49007BBE2A /* NewDrinkViewController.swift in Sources */,
 				0178803D1FA805C5007E040B /* AccountSettingsViewController.swift in Sources */,
+				0A1DCBB41FC515BB00F85591 /* GamesTableViewController.swift in Sources */,
 				0108B9AC1FC289C1007BBE2A /* AlcoholTableViewCell.swift in Sources */,
 				0178802E1FA7B220007E040B /* mixedUP.xcdatamodeld in Sources */,
 				0108B9A41FC272D5007BBE2A /* InstructionViewController.swift in Sources */,
 				0108B9B01FC4DF62007BBE2A /* MixinTableViewCell.swift in Sources */,
 				017880431FA80786007E040B /* MenuSelectViewController.swift in Sources */,
 				0108B9A61FC272FF007BBE2A /* GeneratorViewController.swift in Sources */,
+				0A1DCBB01FC5157100F85591 /* PointingGame.swift in Sources */,
 				0178803B1FA7CB52007E040B /* StartScreenViewController.swift in Sources */,
 				0108B9A21FC0EB3A007BBE2A /* Alcohol.swift in Sources */,
 				0108B9A01FB18F43007BBE2A /* PersistenceService.swift in Sources */,

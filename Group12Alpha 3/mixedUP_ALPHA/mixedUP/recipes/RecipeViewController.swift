@@ -15,7 +15,6 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var drinkTitle: UILabel!
     @IBOutlet weak var ingredientTitle: UILabel!
     @IBOutlet weak var procedureTitle: UILabel!
-    
     @IBOutlet weak var themeSegmentedControl: UISegmentedControl!
     
     var recipe = Recipe(drinkName: "", ingredients: [], instructions: [])
