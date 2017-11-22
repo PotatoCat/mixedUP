@@ -34,6 +34,7 @@ class InstructionViewController: UIViewController
         vodka.adjectives.append(contentsOf: ["Clear", "Harsh"])
         
         var whiskey = Alcohol(name: "Whiskey")
+        whiskey.nouns.append(contentsOf: ["Whiskey"])
         whiskey.adjectives.append(contentsOf: ["Smooth"])
         
         alcoholList.append(tequila)
@@ -44,7 +45,8 @@ class InstructionViewController: UIViewController
     func createJuiceList()
     {
         var pineapple = Alcohol(name: "Pineapple")
-        pineapple.adjectives.append(contentsOf: ["Sour", "Prickely", "Hawian"])
+        pineapple.nouns.append(contentsOf: ["Pine"])
+        pineapple.adjectives.append(contentsOf: ["Sour", "Prickely", "Hawaiian"])
         
         var apple = Alcohol(name: "Apple")
         apple.adjectives.append(contentsOf: ["Golden", "Red", "Green", "Baked", "Roasted", "Sweet", "Tart", "Sour"])

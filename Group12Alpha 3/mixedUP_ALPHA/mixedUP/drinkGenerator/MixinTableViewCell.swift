@@ -14,6 +14,7 @@ class MixinTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mixinNameLabel: UILabel!
     
+    @IBOutlet weak var toUsePosition: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

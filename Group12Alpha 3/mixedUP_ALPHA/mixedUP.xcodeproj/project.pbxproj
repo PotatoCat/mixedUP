@@ -41,6 +41,7 @@
 		0A1EB3DF1FA96A2500E5418E /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */; };
 		0A1EB3E01FA96A2500E5418E /* ThemeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */; };
 		0A1EB3E11FA96A2500E5418E /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DD1FA96A2500E5418E /* RecipeViewController.swift */; };
+		0A40597A1FC533860067E361 /* FinalDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4059791FC533860067E361 /* FinalDrinkViewController.swift */; };
 		0C554510D822F5B95E3B3FE3 /* Pods_mixedUP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6673C30AD3A24780B22BB414 /* Pods_mixedUP.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChanger.swift; sourceTree = "<group>"; };
 		0A1EB3DD1FA96A2500E5418E /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		0A4059791FC533860067E361 /* FinalDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalDrinkViewController.swift; sourceTree = "<group>"; };
 		6673C30AD3A24780B22BB414 /* Pods_mixedUP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mixedUP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D45963F033343F85900409A /* Pods-mixedUP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mixedUP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mixedUP/Pods-mixedUP.debug.xcconfig"; sourceTree = "<group>"; };
 		C00095CA8B06C6A2E70F245C /* Pods-mixedUP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mixedUP.release.xcconfig"; path = "Pods/Target Support Files/Pods-mixedUP/Pods-mixedUP.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0108B9A71FC27666007BBE2A /* Juice.swift */,
 				0108B9A31FC272D5007BBE2A /* InstructionViewController.swift */,
 				0108B9A51FC272FF007BBE2A /* GeneratorViewController.swift */,
+				0A4059791FC533860067E361 /* FinalDrinkViewController.swift */,
 				0108B9A91FC2818F007BBE2A /* AlcoholSelectTableViewController.swift */,
 				0108B9AB1FC289C1007BBE2A /* AlcoholTableViewCell.swift */,
 				0108B9AD1FC33737007BBE2A /* CreatedRandomDrinkViewController.swift */,
@@ -368,6 +371,7 @@
 				0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */,
 				0108B9B41FC4EA49007BBE2A /* NewDrinkViewController.swift in Sources */,
 				0178803D1FA805C5007E040B /* AccountSettingsViewController.swift in Sources */,
+				0A40597A1FC533860067E361 /* FinalDrinkViewController.swift in Sources */,
 				0A1DCBB41FC515BB00F85591 /* GamesTableViewController.swift in Sources */,
 				0108B9AC1FC289C1007BBE2A /* AlcoholTableViewCell.swift in Sources */,
 				0178802E1FA7B220007E040B /* mixedUP.xcdatamodeld in Sources */,

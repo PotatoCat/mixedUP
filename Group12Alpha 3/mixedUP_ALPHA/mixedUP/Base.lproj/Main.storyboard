@@ -722,7 +722,7 @@
                                 </constraints>
                                 <state key="normal" title="Alcohol"/>
                                 <connections>
-                                    <segue destination="Gf7-oD-mCJ" kind="show" identifier="alcoholListTable" id="P8Y-YR-v2L"/>
+                                    <segue destination="Ji6-sE-X3l" kind="show" identifier="alcoholListTable" id="gOg-sh-Jcz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qq-pg-66j">
@@ -733,7 +733,7 @@
                                 </constraints>
                                 <state key="normal" title="Mixins"/>
                                 <connections>
-                                    <segue destination="SZW-aJ-SMu" kind="show" identifier="mixinListTable" id="xFd-0H-KZE"/>
+                                    <segue destination="QtT-2K-RS6" kind="show" identifier="mixinListTable" id="Qe9-ZO-hXA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n58-xP-fCW">
@@ -745,7 +745,7 @@
                                 <state key="normal" title="Generate Drink!"/>
                                 <connections>
                                     <action selector="clickGenerateDrink:" destination="CRW-Wk-MTg" eventType="touchUpInside" id="hML-ZM-Sc4"/>
-                                    <segue destination="Xf3-i6-Dcm" kind="show" id="Z6F-V1-CTs"/>
+                                    <segue destination="dZw-ol-L9e" kind="show" identifier="finalDrinkSegue" id="Kia-ZQ-5Jg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -825,7 +825,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAI-Vk-W4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4337" y="-1169"/>
+            <point key="canvasLocation" x="5169" y="-1390"/>
         </scene>
         <!--New Drink View Controller-->
         <scene sceneID="GhV-YP-qO6">
@@ -836,7 +836,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THIS IS AN EXAMPLE NEW NAME FRO WITH ALL THRE LIENS USED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlW-B5-nPA">
-                                <rect key="frame" x="16" y="112" width="343" height="100"/>
+                                <rect key="frame" x="16" y="68" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="FNV-7k-9Vi"/>
                                 </constraints>
@@ -1036,7 +1036,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KC-tq-4xJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4337" y="-264"/>
+            <point key="canvasLocation" x="5170" y="-60"/>
         </scene>
         <!--Drink Tracker View Controller-->
         <scene sceneID="HPb-vb-qPK">
@@ -1215,6 +1215,173 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LV-rq-Ms8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1838" y="-705"/>
+        </scene>
+        <!--New Drink View Controller-->
+        <scene sceneID="U3B-Ee-gwe">
+            <objects>
+                <viewController id="dZw-ol-L9e" customClass="NewDrinkViewController" customModule="mixedUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJT-WX-dfg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qir-Jc-oAt">
+                                <rect key="frame" x="16" y="112" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7fs-b3-Fj7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm3-sE-fxE">
+                                <rect key="frame" x="16" y="323" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="J51-Jm-0Kc"/>
+                                    <constraint firstAttribute="height" constant="21" id="TkK-j6-ZeJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f88-Id-2lC">
+                                <rect key="frame" x="16" y="352" width="343" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zin-YG-Gk9" firstAttribute="trailing" secondItem="qir-Jc-oAt" secondAttribute="trailing" constant="16" id="0hs-fd-m9M"/>
+                            <constraint firstItem="Cm3-sE-fxE" firstAttribute="leading" secondItem="zin-YG-Gk9" secondAttribute="leading" constant="16" id="ALD-1o-jeK"/>
+                            <constraint firstItem="qir-Jc-oAt" firstAttribute="leading" secondItem="zin-YG-Gk9" secondAttribute="leading" constant="16" id="cEE-uD-6MU"/>
+                            <constraint firstItem="qir-Jc-oAt" firstAttribute="top" secondItem="zin-YG-Gk9" secondAttribute="top" constant="48" id="gE4-cA-Qdh"/>
+                            <constraint firstItem="Cm3-sE-fxE" firstAttribute="centerY" secondItem="FJT-WX-dfg" secondAttribute="centerY" id="sfs-1Z-Kbp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zin-YG-Gk9"/>
+                    </view>
+                    <connections>
+                        <outlet property="newNameDrink" destination="qir-Jc-oAt" id="K01-kx-ZqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVS-Bw-VUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4374" y="-704"/>
+        </scene>
+        <!--Alcohol Select Table View Controller-->
+        <scene sceneID="HxI-jG-bAd">
+            <objects>
+                <tableViewController id="Ji6-sE-X3l" customClass="AlcoholSelectTableViewController" customModule="mixedUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBM-pg-Ldm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alcoholSelectCell" id="DLg-JN-4eO" customClass="AlcoholTableViewCell" customModule="mixedUP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DLg-JN-4eO" id="AeU-8w-dZ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H4s-jL-tTE">
+                                            <rect key="frame" x="310" y="6" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="toUseAlcohol:" destination="DLg-JN-4eO" eventType="valueChanged" id="4gN-5L-9Ir"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-9Q-1l0">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="JR7-Z7-W9j"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UBp-9Q-1l0" firstAttribute="leading" secondItem="AeU-8w-dZ2" secondAttribute="leadingMargin" id="4nc-l7-bv5"/>
+                                        <constraint firstItem="UBp-9Q-1l0" firstAttribute="top" secondItem="AeU-8w-dZ2" secondAttribute="topMargin" id="RJO-hL-9TZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alcoholName" destination="UBp-9Q-1l0" id="w1d-EX-b65"/>
+                                    <outlet property="setToPostition" destination="H4s-jL-tTE" id="bQL-Tc-Xzu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ji6-sE-X3l" id="EW5-cJ-hfq"/>
+                            <outlet property="delegate" destination="Ji6-sE-X3l" id="Df5-zZ-RAw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0x-Kh-TZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4374" y="-1390"/>
+        </scene>
+        <!--Mixin Select Table View Controller-->
+        <scene sceneID="SV2-Pq-8XY">
+            <objects>
+                <tableViewController id="QtT-2K-RS6" customClass="MixinSelectTableViewController" customModule="mixedUP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4RF-FC-wZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mixinSelectCell" id="Efm-e6-Zxh" customClass="MixinTableViewCell" customModule="mixedUP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Efm-e6-Zxh" id="jnN-75-vrL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aac-xz-FvH">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="jaA-Nm-LCP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EKr-qd-zcN">
+                                            <rect key="frame" x="310" y="6" width="49" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="D8O-gf-ahu"/>
+                                                <constraint firstAttribute="height" constant="31" id="N9A-sb-Cv9"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="selectMixinSwitch:" destination="Efm-e6-Zxh" eventType="valueChanged" id="89d-qJ-pXI"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="EKr-qd-zcN" secondAttribute="trailing" constant="18" id="22P-Xv-GMd"/>
+                                        <constraint firstItem="aac-xz-FvH" firstAttribute="leading" secondItem="jnN-75-vrL" secondAttribute="leadingMargin" id="Axs-2E-2Tm"/>
+                                        <constraint firstItem="aac-xz-FvH" firstAttribute="top" secondItem="jnN-75-vrL" secondAttribute="topMargin" id="COF-Uq-Mqe"/>
+                                        <constraint firstItem="EKr-qd-zcN" firstAttribute="top" secondItem="jnN-75-vrL" secondAttribute="top" constant="6" id="ZNJ-O4-gwn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mixinNameLabel" destination="aac-xz-FvH" id="bHV-0q-CqS"/>
+                                    <outlet property="toUsePosition" destination="EKr-qd-zcN" id="bSZ-M6-Doy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QtT-2K-RS6" id="7GF-Y6-WgN"/>
+                            <outlet property="delegate" destination="QtT-2K-RS6" id="Neg-ta-CRV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5F0-RY-HcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4374" y="107"/>
         </scene>
     </scenes>
     <resources>

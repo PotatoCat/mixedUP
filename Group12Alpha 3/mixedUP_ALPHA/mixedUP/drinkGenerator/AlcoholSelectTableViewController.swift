@@ -55,6 +55,17 @@ class AlcoholSelectTableViewController: UITableViewController
         
         //cell.possibleList = self.possibleList
         cell.alcoholName.text = alcoholList[indexPath.row].alcoholName
+        
+        if(parentView?.possibleList.contains(alcoholList[indexPath.row].alcoholName))!
+        {
+            cell.setToPostition.setOn(true, animated: false)
+        }
+        else
+        {
+            cell.setToPostition.setOn(false, animated: false)
+        }
+        
+        
         cell.parentView = self
         
         

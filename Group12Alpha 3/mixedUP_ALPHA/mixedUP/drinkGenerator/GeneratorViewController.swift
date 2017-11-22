@@ -16,6 +16,7 @@ class GeneratorViewController: UIViewController
     //var juiceList: [Alcohol] = []
     
     var possibleList: [String] = []
+    var newName: String = ""
     
     @IBOutlet weak var numberShots: UILabel!
     override func viewDidLoad()
@@ -26,6 +27,11 @@ class GeneratorViewController: UIViewController
         print(possibleList.description)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("LIST")
+        print(possibleList.description)
     }
     
     @IBAction func stepperAction(_ sender: UIStepper) {
@@ -44,13 +50,130 @@ class GeneratorViewController: UIViewController
     
     @IBAction func clickGenerateDrink(_ sender: Any)
     {
-        var twoWordName: [String] = ["Adjective", "Noun"]
+        newName = ""
         
-        var threeWordName: [String] = ["Noun", "Adjective", "Noun"]
+        if (possibleList.count >= 1)
+        {
+            var num:Int = Int(numberShots.text!)!
+            
+            while (num < possibleList.count)
+            {
+                possibleList.remove(at: Int(arc4random_uniform(UInt32(possibleList.count))))
+            }
+            
+            
+            var twoWordName: [String] = ["Adjective", "Noun"]
+            
+            var threeWordName: [String] = ["Noun", "Adjective", "Noun"]
+            
+            var possibleCombinations:[[String]] = [twoWordName,threeWordName]
+            
+            var diceRoll = Int(arc4random_uniform(UInt32(possibleCombinations.count)))
+            print(diceRoll)
+            var nameFormat:[String] = possibleCombinations[diceRoll]
+            
+            print(alcoholList.description)
+            print(mixinList.description)
+            
+            for type in nameFormat
+            {
+                if(type == "Noun")
+                {
+                    var diceRoll = Int(arc4random_uniform(UInt32(possibleList.count-1)))
+                    var toUseLiquid = possibleList[diceRoll]
+                    
+                    print("TO USE \(toUseLiquid)")
+                    
+                    var i = -1
+                    var useAlc = true
+                    var x = 0
+                    
+                    for drink in alcoholList
+                    {
+                        if(drink.alcoholName == toUseLiquid)
+                        {
+                            i = x
+                        }
+                        x = x + 1
+                    }
+                    x = 0
+                    if (i == -1)
+                    {
+                        useAlc = false
+                        for drink in mixinList
+                        {
+                            if(drink.alcoholName == toUseLiquid)
+                            {
+                                i = x
+                            }
+                            x = x + 1
+                        }
+                    }
+                    
+                    if(useAlc)
+                    {
+                        print("Value of i = \(i)")
+                        diceRoll = Int(arc4random_uniform(UInt32(alcoholList[i].nouns.count)))
+                        newName = newName + alcoholList[i].nouns[Int(arc4random_uniform(UInt32(alcoholList[i].nouns.count)))] + " "
+                    }
+                    else
+                    {
+                        print("Value of i = \(i)")
+                        diceRoll = Int(arc4random_uniform(UInt32(mixinList[i].nouns.count)))
+                        newName = newName + mixinList[i].nouns[Int(arc4random_uniform(UInt32(mixinList[i].nouns.count)))] + " "
+                    }
+                }
+                
+                if(type == "Adjective")
+                {
+                    
+                    var diceRoll = Int(arc4random_uniform(UInt32(possibleList.count)))
+                    var toUseLiquid = possibleList[diceRoll]
+                    print("TO USE \(toUseLiquid)")
+                    var i = -1
+                    var useAlc = true
+                    var x = 0
+                    
+                    for drink in alcoholList
+                    {
+                        if(drink.alcoholName == toUseLiquid)
+                        {
+                            i = x
+                        }
+                        x = x + 1
+                    }
+                    x = 0
+                    if (i == -1)
+                    {
+                        useAlc = false
+                        for drink in mixinList
+                        {
+                            if(drink.alcoholName == toUseLiquid)
+                            {
+                                i = x
+                            }
+                            x = x + 1
+                        }
+                    }
+                    
+                    if(useAlc)
+                    {
+                        print("Value of i = \(i)")
+                        diceRoll = Int(arc4random_uniform(UInt32(alcoholList[i].adjectives.count)))
+                        newName = newName + alcoholList[i].adjectives[Int(arc4random_uniform(UInt32(alcoholList[i].adjectives.count)))] + " "
+                    }
+                    else
+                    {
+                        print("Value of i = \(i)")
+                        diceRoll = Int(arc4random_uniform(UInt32(mixinList[i].adjectives.count)))
+                        newName = newName + mixinList[i].adjectives[Int(arc4random_uniform(UInt32(mixinList[i].adjectives.count)))] + " "
+                    }
+                }
+            }
+        }
         
-        var possibleCombinations:[[String]] = [twoWordName,threeWordName]
         
-        
+        print(newName)
     }
 
     
@@ -79,8 +202,13 @@ class GeneratorViewController: UIViewController
             //vc.juiceList = self.juiceList
             //vc.accountInformation = self.accountInformation
         }
-        
+        if segue.identifier == "finalDrinkSegue"
+        {
+            let vc = segue.destination as! NewDrinkViewController
+            //print(newName)
+            //print(vc.testLabel.text)
+            vc.newLabel = newName
+            //vc.accountInformation = self.accountInformation
+        }
     }
-    
-
 }

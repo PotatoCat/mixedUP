@@ -1,5 +1,5 @@
 //
-//  NewDrinkViewController.swift
+//  FinalDrinkViewController.swift
 //  mixedUP
 //
 //  Created by Nicholas Frawley on 11/21/17.
@@ -8,17 +8,15 @@
 
 import UIKit
 
-class NewDrinkViewController: UIViewController {
+class FinalDrinkViewController: UIViewController {
 
-    @IBOutlet weak var newNameDrink: UILabel!
+    @IBOutlet weak var newDrinkName: UILabel!
     
     var newLabel:String = ""
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        newNameDrink.text = newLabel
+        newDrinkName.text = newLabel
         // Do any additional setup after loading the view.
     }
 

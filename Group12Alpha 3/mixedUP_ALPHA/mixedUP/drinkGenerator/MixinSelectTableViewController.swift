@@ -54,6 +54,16 @@ class MixinSelectTableViewController: UITableViewController
         
         //cell.possibleList = self.possibleList
         cell.mixinNameLabel.text = mixinList[indexPath.row].alcoholName
+        
+        if(parentView?.possibleList.contains(mixinList[indexPath.row].alcoholName))!
+        {
+            cell.toUsePosition.setOn(true, animated: false)
+        }
+        else
+        {
+            cell.toUsePosition.setOn(false, animated: false)
+        }
+        
         cell.parentView = self
 
         // Configure the cell...

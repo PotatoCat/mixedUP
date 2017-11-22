@@ -15,6 +15,7 @@ class AlcoholTableViewCell: UITableViewCell {
     
     @IBOutlet weak var alcoholName: UILabel!
     
+    @IBOutlet weak var setToPostition: UISwitch!
     @IBAction func toUseAlcohol(_ sender: UISwitch)
     {
         if (sender.isOn)
