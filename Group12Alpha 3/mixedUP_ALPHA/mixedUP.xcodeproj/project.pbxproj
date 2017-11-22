@@ -32,6 +32,8 @@
 		017880451FA91EB4007E040B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 017880441FA91EB3007E040B /* GoogleService-Info.plist */; };
 		01F3A08F1FA942AD001F570A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A08E1FA942AD001F570A /* UserData.swift */; };
 		01F3A0911FA94DC4001F570A /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */; };
+		0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB951FC50F9C00F85591 /* Drinks.swift */; };
+		0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */; };
 		0A1EB3DE1FA96A2500E5418E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DA1FA96A2400E5418E /* Recipe.swift */; };
 		0A1EB3DF1FA96A2500E5418E /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */; };
 		0A1EB3E01FA96A2500E5418E /* ThemeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */; };
@@ -67,6 +69,8 @@
 		017880441FA91EB3007E040B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01F3A08E1FA942AD001F570A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
+		0A1DCB951FC50F9C00F85591 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinkTrackerViewController.swift; sourceTree = "<group>"; };
 		0A1EB3DA1FA96A2400E5418E /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChanger.swift; sourceTree = "<group>"; };
@@ -109,30 +113,70 @@
 		017880241FA7B220007E040B /* mixedUP */ = {
 			isa = PBXGroup;
 			children = (
-				0A1EB3DA1FA96A2400E5418E /* Recipe.swift */,
 				0108B99F1FB18F42007BBE2A /* PersistenceService.swift */,
-				0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */,
-				0A1EB3DD1FA96A2500E5418E /* RecipeViewController.swift */,
-				0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */,
 				017880251FA7B220007E040B /* AppDelegate.swift */,
 				017880271FA7B220007E040B /* ViewController.swift */,
-				017880291FA7B220007E040B /* Main.storyboard */,
-				017880421FA80786007E040B /* MenuSelectViewController.swift */,
-				0178803E1FA805FC007E040B /* AppearanceSettingsViewController.swift */,
-				017880401FA8060B007E040B /* FeaturesSettingsViewController.swift */,
-				017880441FA91EB3007E040B /* GoogleService-Info.plist */,
-				0178803C1FA805C5007E040B /* AccountSettingsViewController.swift */,
-				0178803A1FA7CB52007E040B /* StartScreenViewController.swift */,
-				0178802F1FA7B220007E040B /* Assets.xcassets */,
 				017880311FA7B220007E040B /* LaunchScreen.storyboard */,
+				017880291FA7B220007E040B /* Main.storyboard */,
+				0A1DCB9F1FC5105600F85591 /* recipes */,
+				0A1DCB9D1FC5103500F85591 /* drinkGenerator */,
+				0A1DCB9C1FC5102800F85591 /* UI Theme */,
+				0A1DCB9B1FC5102200F85591 /* games */,
+				0A1DCB9A1FC5101400F85591 /* menu and settings */,
+				0A1DCB991FC5100C00F85591 /* drinkTracker */,
+				017880441FA91EB3007E040B /* GoogleService-Info.plist */,
+				0178802F1FA7B220007E040B /* Assets.xcassets */,
 				017880341FA7B220007E040B /* Info.plist */,
 				0178802C1FA7B220007E040B /* mixedUP.xcdatamodeld */,
 				01F3A08E1FA942AD001F570A /* UserData.swift */,
+			);
+			path = mixedUP;
+			sourceTree = "<group>";
+		};
+		0A1DCB991FC5100C00F85591 /* drinkTracker */ = {
+			isa = PBXGroup;
+			children = (
+				0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */,
+				0A1DCB951FC50F9C00F85591 /* Drinks.swift */,
+			);
+			path = drinkTracker;
+			sourceTree = "<group>";
+		};
+		0A1DCB9A1FC5101400F85591 /* menu and settings */ = {
+			isa = PBXGroup;
+			children = (
+				0178803A1FA7CB52007E040B /* StartScreenViewController.swift */,
+				017880421FA80786007E040B /* MenuSelectViewController.swift */,
+				0178803E1FA805FC007E040B /* AppearanceSettingsViewController.swift */,
+				017880401FA8060B007E040B /* FeaturesSettingsViewController.swift */,
+				0178803C1FA805C5007E040B /* AccountSettingsViewController.swift */,
 				01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */,
+			);
+			path = "menu and settings";
+			sourceTree = "<group>";
+		};
+		0A1DCB9B1FC5102200F85591 /* games */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = games;
+			sourceTree = "<group>";
+		};
+		0A1DCB9C1FC5102800F85591 /* UI Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0A1EB3DC1FA96A2400E5418E /* ThemeChanger.swift */,
+			);
+			path = "UI Theme";
+			sourceTree = "<group>";
+		};
+		0A1DCB9D1FC5103500F85591 /* drinkGenerator */ = {
+			isa = PBXGroup;
+			children = (
 				0108B9A11FC0EB3A007BBE2A /* Alcohol.swift */,
+				0108B9A71FC27666007BBE2A /* Juice.swift */,
 				0108B9A31FC272D5007BBE2A /* InstructionViewController.swift */,
 				0108B9A51FC272FF007BBE2A /* GeneratorViewController.swift */,
-				0108B9A71FC27666007BBE2A /* Juice.swift */,
 				0108B9A91FC2818F007BBE2A /* AlcoholSelectTableViewController.swift */,
 				0108B9AB1FC289C1007BBE2A /* AlcoholTableViewCell.swift */,
 				0108B9AD1FC33737007BBE2A /* CreatedRandomDrinkViewController.swift */,
@@ -140,7 +184,17 @@
 				0108B9B11FC4E117007BBE2A /* MixinSelectTableViewController.swift */,
 				0108B9B31FC4EA48007BBE2A /* NewDrinkViewController.swift */,
 			);
-			path = mixedUP;
+			path = drinkGenerator;
+			sourceTree = "<group>";
+		};
+		0A1DCB9F1FC5105600F85591 /* recipes */ = {
+			isa = PBXGroup;
+			children = (
+				0A1EB3DA1FA96A2400E5418E /* Recipe.swift */,
+				0A1EB3DB1FA96A2400E5418E /* RecipesTableViewController.swift */,
+				0A1EB3DD1FA96A2500E5418E /* RecipeViewController.swift */,
+			);
+			path = recipes;
 			sourceTree = "<group>";
 		};
 		719D9A07ACBA23E54EAE847F /* Frameworks */ = {
@@ -301,6 +355,7 @@
 				01F3A08F1FA942AD001F570A /* UserData.swift in Sources */,
 				0108B9AA1FC2818F007BBE2A /* AlcoholSelectTableViewController.swift in Sources */,
 				0108B9A81FC27666007BBE2A /* Juice.swift in Sources */,
+				0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */,
 				0108B9B41FC4EA49007BBE2A /* NewDrinkViewController.swift in Sources */,
 				0178803D1FA805C5007E040B /* AccountSettingsViewController.swift in Sources */,
 				0108B9AC1FC289C1007BBE2A /* AlcoholTableViewCell.swift in Sources */,
@@ -312,6 +367,7 @@
 				0178803B1FA7CB52007E040B /* StartScreenViewController.swift in Sources */,
 				0108B9A21FC0EB3A007BBE2A /* Alcohol.swift in Sources */,
 				0108B9A01FB18F43007BBE2A /* PersistenceService.swift in Sources */,
+				0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */,
 				0108B9B21FC4E117007BBE2A /* MixinSelectTableViewController.swift in Sources */,
 				0A1EB3E01FA96A2500E5418E /* ThemeChanger.swift in Sources */,
 				0178803F1FA805FC007E040B /* AppearanceSettingsViewController.swift in Sources */,
