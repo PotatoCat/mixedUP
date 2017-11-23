@@ -32,6 +32,8 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loggedInAccountInformation = PersistenceService.shared.currentLoggedInUserInfo
+        
         if(loggedInAccountInformation != nil)
         {
             showUsernameLabel.text = loggedInAccountInformation?.username
@@ -46,6 +48,27 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate {
             {
                 specificGender.text = loggedInAccountInformation?.gender
             }
+        }
+        
+        //textField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+        //Sets any characters that aren't numbers to "invalid"
+        var check:Bool = string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
+        if(textField.text!.count > 2 && check)
+        {
+            textField.deleteBackward()
+        }
+        //self.checkMaxLength(textField: textField, maxLength: 3)
+        return check
+    }
+    
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text!.count > maxLength) {
+            textField.deleteBackward()
         }
     }
         
@@ -190,6 +213,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate {
             self.alertController!.addAction(cancel)
         
             self.alertController!.addTextField { (textField) -> Void in
+                textField.delegate = self
                 // Enter the textfiled customization code here.
                 self.weightTextField = textField
                 self.weightTextField?.placeholder = "Current Weight"

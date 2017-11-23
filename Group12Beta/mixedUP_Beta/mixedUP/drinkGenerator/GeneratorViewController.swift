@@ -16,30 +16,37 @@ class GeneratorViewController: UIViewController
     //var juiceList: [Alcohol] = []
     
     var possibleList: [String] = []
+    var usableList: [String] = []
     var newName: String = ""
     
     @IBOutlet weak var numberShots: UILabel!
+    
+    @IBOutlet weak var generateButtonThing: UIButton!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        print("LIST")
-        print(possibleList.description)
+        //print("LIST")
+        //print(possibleList.description)
+        //generateButtonThing.isUserInteractionEnabled = false
+        //generateButtonThing.isEnabled = false
+        
+        
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("LIST")
-        print(possibleList.description)
+        //print("LIST")
+        //print(possibleList.description)
     }
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         numberShots.text = String(Int(sender.value))
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("LIST")
-        print(possibleList.description)
+        //print("LIST")
+        //print(possibleList.description)
     }
 
     override func didReceiveMemoryWarning()
@@ -51,14 +58,22 @@ class GeneratorViewController: UIViewController
     @IBAction func clickGenerateDrink(_ sender: Any)
     {
         newName = ""
+        usableList.removeAll()
+        usableList.append(contentsOf: possibleList)
+        if possibleList.count == 0
+        {
+            //generateButtonThing.isEnabled = false
+            newName = "Please first select potential drink ingredients on the previous screen."
+        }
         
         if (possibleList.count >= 1)
         {
+            newName = ""
             var num:Int = Int(numberShots.text!)!
             
-            while (num < possibleList.count)
+            while (num < usableList.count)
             {
-                possibleList.remove(at: Int(arc4random_uniform(UInt32(possibleList.count))))
+                usableList.remove(at: Int(arc4random_uniform(UInt32(usableList.count))))
             }
             
             
@@ -79,8 +94,8 @@ class GeneratorViewController: UIViewController
             {
                 if(type == "Noun")
                 {
-                    var diceRoll = Int(arc4random_uniform(UInt32(possibleList.count-1)))
-                    var toUseLiquid = possibleList[diceRoll]
+                    var diceRoll = Int(arc4random_uniform(UInt32(usableList.count-1)))
+                    var toUseLiquid = usableList[diceRoll]
                     
                     print("TO USE \(toUseLiquid)")
                     
@@ -127,8 +142,8 @@ class GeneratorViewController: UIViewController
                 if(type == "Adjective")
                 {
                     
-                    var diceRoll = Int(arc4random_uniform(UInt32(possibleList.count)))
-                    var toUseLiquid = possibleList[diceRoll]
+                    var diceRoll = Int(arc4random_uniform(UInt32(usableList.count)))
+                    var toUseLiquid = usableList[diceRoll]
                     print("TO USE \(toUseLiquid)")
                     var i = -1
                     var useAlc = true
@@ -207,6 +222,8 @@ class GeneratorViewController: UIViewController
             let vc = segue.destination as! NewDrinkViewController
             //print(newName)
             //print(vc.testLabel.text)
+            vc.numberOfShots = Int(numberShots.text!)!
+            vc.listOfLiquid = usableList
             vc.newLabel = newName
             //vc.accountInformation = self.accountInformation
         }

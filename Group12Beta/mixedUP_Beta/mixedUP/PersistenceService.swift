@@ -14,6 +14,8 @@ class PersistenceService {
     // Provide external access to this Singleton.
     static let shared = PersistenceService()
     
+    var currentLoggedInUserInfo: UserData? = nil
+    
     private var userData: [NSManagedObject]!
     
     // MARK: - Core Data stack

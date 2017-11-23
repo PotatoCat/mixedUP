@@ -30,6 +30,7 @@
 		017880411FA8060B007E040B /* FeaturesSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017880401FA8060B007E040B /* FeaturesSettingsViewController.swift */; };
 		017880431FA80786007E040B /* MenuSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017880421FA80786007E040B /* MenuSelectViewController.swift */; };
 		017880451FA91EB4007E040B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 017880441FA91EB3007E040B /* GoogleService-Info.plist */; };
+		01E277F41FC65D13002C9298 /* NavMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E277F31FC65D13002C9298 /* NavMenuViewController.swift */; };
 		01F3A08F1FA942AD001F570A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A08E1FA942AD001F570A /* UserData.swift */; };
 		01F3A0911FA94DC4001F570A /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */; };
 		0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB951FC50F9C00F85591 /* Drinks.swift */; };
@@ -71,6 +72,7 @@
 		017880401FA8060B007E040B /* FeaturesSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesSettingsViewController.swift; sourceTree = "<group>"; };
 		017880421FA80786007E040B /* MenuSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectViewController.swift; sourceTree = "<group>"; };
 		017880441FA91EB3007E040B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01E277F31FC65D13002C9298 /* NavMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuViewController.swift; sourceTree = "<group>"; };
 		01F3A08E1FA942AD001F570A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		0A1DCB951FC50F9C00F85591 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				017880401FA8060B007E040B /* FeaturesSettingsViewController.swift */,
 				0178803C1FA805C5007E040B /* AccountSettingsViewController.swift */,
 				01F3A0901FA94DC4001F570A /* SettingsTabBarViewController.swift */,
+				01E277F31FC65D13002C9298 /* NavMenuViewController.swift */,
 			);
 			path = "menu and settings";
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				0178803D1FA805C5007E040B /* AccountSettingsViewController.swift in Sources */,
 				0A40597A1FC533860067E361 /* FinalDrinkViewController.swift in Sources */,
 				0A1DCBB41FC515BB00F85591 /* GamesTableViewController.swift in Sources */,
+				01E277F41FC65D13002C9298 /* NavMenuViewController.swift in Sources */,
 				0108B9AC1FC289C1007BBE2A /* AlcoholTableViewCell.swift in Sources */,
 				0178802E1FA7B220007E040B /* mixedUP.xcdatamodeld in Sources */,
 				0108B9A41FC272D5007BBE2A /* InstructionViewController.swift in Sources */,

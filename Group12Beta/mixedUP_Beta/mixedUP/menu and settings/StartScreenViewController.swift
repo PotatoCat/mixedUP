@@ -73,6 +73,7 @@ class StartScreenViewController: UIViewController, UITextFieldDelegate
                         {
                             self.incorrectInfo(messageTitle: "Welcome!", textMessage: "Remeber to drink plenty of water!")
                             self.loggedInAccountInformation = PersistenceService.shared.getPerson(username: (self.loginTextField?.text)!)
+                            PersistenceService.shared.currentLoggedInUserInfo = PersistenceService.shared.getPerson(username: (self.loginTextField?.text)!)
                         }
                         self.incorrectInfo(messageTitle: "Account", textMessage: "Either username/password is incorrect!")
                     }
@@ -292,12 +293,19 @@ class StartScreenViewController: UIViewController, UITextFieldDelegate
             accountVC.loggedInAccountInformation = self.loggedInAccountInformation
             //vc.accountInformation = self.accountInformation
         }
+        if segue.identifier == "toNavSegue"
+        {
+            let vc = segue.destination as! NavMenuViewController
+            let menuVC = vc.childViewControllers[0] as! MenuSelectViewController
+            menuVC.loggedInAccountInformation = self.loggedInAccountInformation
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     
     @IBAction func logoutButton(_ sender: Any) {
         self.loggedInAccountInformation = nil
+        PersistenceService.shared.currentLoggedInUserInfo = nil
         incorrectInfo(messageTitle: "Logout", textMessage: "You have logged out")
     }
 

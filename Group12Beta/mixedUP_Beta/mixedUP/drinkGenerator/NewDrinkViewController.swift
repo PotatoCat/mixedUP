@@ -14,11 +14,29 @@ class NewDrinkViewController: UIViewController {
     
     var newLabel:String = ""
     
+    var listOfLiquid: [String] = []
+    var numberOfShots:Int = 0
+    
+    @IBOutlet weak var ingredientsListText: UITextView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         newNameDrink.text = newLabel
+        
+        print(listOfLiquid.description)
+        
+        var newIngr: String = ""
+        
+        for ingred in listOfLiquid
+        {
+            newIngr = newIngr + "\(String(numberOfShots/listOfLiquid.count)) oz. \(ingred)\n"
+        }
+        
+        ingredientsListText.text = newIngr
+        
+        
         // Do any additional setup after loading the view.
     }
 

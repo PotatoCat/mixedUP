@@ -18,6 +18,8 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var timeText: UILabel!
     @IBOutlet weak var bacText: UILabel!
     @IBOutlet weak var alertText: UILabel!
+    @IBOutlet weak var genderTextLabel: UILabel!
+    @IBOutlet weak var weightTextLabel: UILabel!
     
     var bac: Double = 0
     var drinkCount: Int = 0
@@ -26,21 +28,64 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     var pickerSelected = false
     var picked = ""
     //find way to get from database
-    var gender: String = "female"
+    var gender: String = "Female"
     var weight: Double = 90
+    var loggedInAccountInformation: UserData? = nil
+    var alertController:UIAlertController? = nil
+
     
     
     var startTime = TimeInterval()
     var timer = Timer()
     var hours: Double = 0.0
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        loggedInAccountInformation = PersistenceService.shared.currentLoggedInUserInfo
+        weightTextLabel.text = "\(String(weight)) lbs"
+        genderTextLabel.text = gender
         createDrinksList()
         drinksList = Array(drinksDict.keys)
         // Keyboard Dismissal
         volText?.delegate = self
         proofText?.delegate = self
+        var missingInfo: Bool = false
+        var loggedIn: Bool = false
+        if(loggedInAccountInformation != nil)
+        {
+            loggedIn = true
+            if(loggedInAccountInformation?.weight != "")
+            {
+                weight = Double(Int(loggedInAccountInformation!.weight)!)
+                weightTextLabel.text = "\(String(weight)) lbs"
+            }
+            else
+            {
+                missingInfo = true
+            }
+            if(loggedInAccountInformation?.gender != "")
+            {
+                gender = (loggedInAccountInformation?.gender)!
+                genderTextLabel.text = gender
+            }
+            else
+            {
+                missingInfo = true
+            }
+        }
+        else
+        {
+            missingInfo = true
+        }
+        
+        if missingInfo && loggedIn{
+            incorrectInfo(messageTitle: "WARNING DEFAULT VALUES USED", textMessage: "Please add your missing information in the settings screen.")
+        }
+        else if(missingInfo && !loggedIn)
+        {
+            incorrectInfo(messageTitle: "WARNING DEFAULT VALUES USED", textMessage: "You need to login and set your weight/gender to fully use this feature.")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -110,7 +155,7 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     //note amount in oz, weight in lbs, time in hours
     func bacCalculator (amount: Double, weight: Double, gender: String, time: Double) -> Double {
-        if gender == "female" {
+        if (gender == "Female" || gender == "Other") {
             bac += ((amount * (5.14 / weight) * 0.66) - 0.015 * time)
             return bac
         }
@@ -144,6 +189,17 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerSelected = true
         picked = drinksList[row]
+    }
+    
+    func incorrectInfo(messageTitle: String, textMessage: String) {
+        self.alertController = UIAlertController(title: messageTitle, message: textMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+            //print("Ok Button Pressed 1");
+        }
+        self.alertController!.addAction(OKAction)
+        
+        self.present(self.alertController!, animated: true, completion:nil)
     }
     
     // Called when the user touches on the main view (outside the UITextField). Keyboard Dismissal
