@@ -26,7 +26,7 @@ class InstructionViewController: UIViewController
         //var alcoholList: [Alcohol] = []
         
         var tequila = Alcohol(name: "Tequila")
-        tequila.nouns.append(contentsOf: ["Mexico", "Desert", "Gold"])
+        tequila.nouns.append(contentsOf: ["Mexican", "Desert", "Gold"])
         tequila.adjectives.append(contentsOf: ["Golden","Aged"])
         
         var vodka = Alcohol(name: "Vodka")

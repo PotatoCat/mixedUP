@@ -79,7 +79,7 @@ class GeneratorViewController: UIViewController
             
             var twoWordName: [String] = ["Adjective", "Noun"]
             
-            var threeWordName: [String] = ["Noun", "Adjective", "Noun"]
+            var threeWordName: [String] = ["Adjective", "Adjective", "Noun"]
             
             var possibleCombinations:[[String]] = [twoWordName,threeWordName]
             
