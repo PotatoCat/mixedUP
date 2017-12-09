@@ -207,7 +207,7 @@ class PersistenceService {
             i += 1
         }
         print("LOADED")
-        print(listOfAlcohols![0].alcoholName)
+        //print(listOfAlcohols![0].alcoholName)
     }
     
     func savePerson(user: UserData) {
