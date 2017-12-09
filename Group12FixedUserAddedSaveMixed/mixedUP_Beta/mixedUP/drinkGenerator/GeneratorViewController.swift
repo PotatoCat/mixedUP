@@ -18,6 +18,8 @@ class GeneratorViewController: UIViewController
     var possibleList: [String] = []
     var usableList: [String] = []
     var newName: String = ""
+    public static var validDrink : Bool = false
+    var alertController:UIAlertController? = nil
     
     @IBOutlet weak var numberShots: UILabel!
     
@@ -60,14 +62,17 @@ class GeneratorViewController: UIViewController
         newName = ""
         usableList.removeAll()
         usableList.append(contentsOf: possibleList)
-        if possibleList.count == 0
+        if (possibleList.count < 1)
         {
+            GeneratorViewController.validDrink = false
             //generateButtonThing.isEnabled = false
+            incorrectInfo(messageTitle: "Oh no", textMessage: "Not enough ingredients selected! Please select some.")
             newName = "Please first select potential drink ingredients on the previous screen."
         }
         
-        if (possibleList.count >= 1)
+        else
         {
+            GeneratorViewController.validDrink = true
             newName = ""
             var num:Int = Int(numberShots.text!)!
             
@@ -75,7 +80,6 @@ class GeneratorViewController: UIViewController
             {
                 usableList.remove(at: Int(arc4random_uniform(UInt32(usableList.count))))
             }
-            
             
             var twoWordName: [String] = ["Adjective", "Noun"]
             
@@ -173,13 +177,13 @@ class GeneratorViewController: UIViewController
                     
                     if(useAlc)
                     {
-                        print("Value of i = \(i)")
+                        //print("Value of i = \(i)")
                         diceRoll = Int(arc4random_uniform(UInt32(alcoholList[i].adjectives.count)))
                         newName = newName + alcoholList[i].adjectives[Int(arc4random_uniform(UInt32(alcoholList[i].adjectives.count)))] + " "
                     }
                     else
                     {
-                        print("Value of i = \(i)")
+                        //print("Value of i = \(i)")
                         diceRoll = Int(arc4random_uniform(UInt32(mixinList[i].adjectives.count)))
                         newName = newName + mixinList[i].adjectives[Int(arc4random_uniform(UInt32(mixinList[i].adjectives.count)))] + " "
                     }
@@ -188,7 +192,7 @@ class GeneratorViewController: UIViewController
         }
         
         
-        print(newName)
+        //print(newName)
     }
 
     
@@ -227,5 +231,15 @@ class GeneratorViewController: UIViewController
             vc.newLabel = newName
             //vc.accountInformation = self.accountInformation
         }
+    }
+    func incorrectInfo(messageTitle: String, textMessage: String) {
+        self.alertController = UIAlertController(title: messageTitle, message: textMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+            //print("Ok Button Pressed 1");
+        }
+        self.alertController!.addAction(OKAction)
+        
+        self.present(self.alertController!, animated: true, completion:nil)
     }
 }

@@ -16,6 +16,7 @@ class NewDrinkViewController: UIViewController {
     
     var listOfLiquid: [String] = []
     var numberOfShots:Int = 0
+    var alertController:UIAlertController? = nil
     
     @IBOutlet weak var ingredientsListText: UITextView!
     
@@ -42,25 +43,34 @@ class NewDrinkViewController: UIViewController {
 
     @IBAction func clickToSave(_ sender: Any)
     {
-        var newDrink = MixedData()
-        newDrink.alcoholName = newNameDrink.text!
-        var tempString = ""
-        
-        for each in listOfLiquid
-        {
-            tempString.append("\n")
-            tempString.append(each)
+        if(!GeneratorViewController.validDrink){
+            //alert unsuccessful save
+            incorrectInfo(messageTitle: "Oh no", textMessage: "Not enough ingredients selected! Please go back")
         }
-        print(tempString)
-        newDrink.alcoholList = tempString
-        newDrink.amountList = ""
-        print("CLICKED")
-        PersistenceService.shared.saveDrink(drink: newDrink)
-        
-        /*for each in PersistenceService.shared.listOfAlcohols!
-        {
-            print(each.alcoholName)
-        }*/
+        else{
+            // alert successful save
+            self.alertController = UIAlertController(title: "Cheers!", message: "Drink saved to Recipes!", preferredStyle: UIAlertControllerStyle.alert)
+                
+            var newDrink = MixedData()
+            newDrink.alcoholName = newNameDrink.text!
+            var tempString = ""
+            
+            for each in listOfLiquid
+            {
+                tempString.append("\n")
+                tempString.append(each)
+            }
+            print(tempString)
+            newDrink.alcoholList = tempString
+            newDrink.amountList = ""
+            print("CLICKED")
+            PersistenceService.shared.saveDrink(drink: newDrink)
+            
+            /*for each in PersistenceService.shared.listOfAlcohols!
+            {
+                print(each.alcoholName)
+            }*/
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,5 +88,16 @@ class NewDrinkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func incorrectInfo(messageTitle: String, textMessage: String) {
+        self.alertController = UIAlertController(title: messageTitle, message: textMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+            //print("Ok Button Pressed 1");
+        }
+        self.alertController!.addAction(OKAction)
+        
+        self.present(self.alertController!, animated: true, completion:nil)
+    }
 
 }

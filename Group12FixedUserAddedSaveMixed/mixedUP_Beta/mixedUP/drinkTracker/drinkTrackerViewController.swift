@@ -130,7 +130,8 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
         numDrinksText.text = String(drinkCount)
         
         if bac > 0.08 {
-            alertText.text = "Your BAC is too high to drive!"
+            alertText.text = "Your estimated BAC is too high to drive!"
+            incorrectInfo(messageTitle: "WARNING", textMessage: "Your estimated BAC is too high to drive!")
         }
         
     }
@@ -189,6 +190,16 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerSelected = true
         picked = drinksList[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let string = "myString"
+        if(ThemeChanger.theme == "dark"){
+            return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:ThemeChanger.textColorDark])
+        }
+        else{
+            return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:ThemeChanger.textColorLight])
+        }
     }
     
     func incorrectInfo(messageTitle: String, textMessage: String) {
