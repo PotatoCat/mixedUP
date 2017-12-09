@@ -53,16 +53,16 @@ class RecipesTableViewController: UITableViewController
 
     func createDict () {
         
-        recipeDict["Moscow Mule"] = Recipe.create(drinkName: "Moscow Mule", ingredients: ["1.5 oz. Vodka", "4 oz. Ginger Beer", "Lime Juice"], instructions: ["1. Put  ginger beer, vodka and lime juice in a copper mug", "2. Add 2-3 ice cubes and stir"])
-        recipeDict["Old Fashioned"] = Recipe.create(drinkName: "Old Fashioned", ingredients: ["2 oz. Bourbon", "1 tsp sugar", "splash of club soda", "4 dashes bitters"], instructions: ["1. Muddle bitters, sugar, orange wheel, cherry, and soda", "2. Remove the orange and fill with ice", "3. Pour in bourbon"])
-        recipeDict["Mai Tai"] = Recipe.create(drinkName: "Mai Tai", ingredients: ["1.5 oz. Spiced Rum", "1 oz. Coconut Rum", "1 tsp. Genadine", "3 oz. Pineapple Juice", "2 oz. Orange Juice"], instructions: ["1. Combine all ingredients in a shaker with ice", "2. Shake vigorously and pour into a glass"])
-        recipeDict["Death in the Afternoon"] = Recipe.create(drinkName: "Death in the Afternoon", ingredients: ["1.5 oz. Absinthe", "4 oz. Champagne"], instructions: ["1. Pour absinthe into champagne flute"])
-        recipeDict["Daquiri"] = Recipe.create(drinkName: "Daquiri", ingredients: ["1.5 oz. light rum", ".75 oz. lime juice", ".25 oz. simple syrup"], instructions: ["1. Pour the rum, lime juice, and simple syrup into shaker", "2. Shake well", "3. Strain into a glass"])
-        recipeDict["Tequila Sunrise"] = Recipe.create(drinkName: "Tequila Sunrise", ingredients: ["1.5 oz. Tequila", "4 oz. orange juice", "1 splash grenadine"], instructions: ["1. Add tequila and orange juice to a glass", "2. Float grenadine on top"])
-        recipeDict["Cherry Collins"] = Recipe.create(drinkName: "Cherry Collins", ingredients: ["2 oz. Cherry Vodka", ".75 oz. Lemon Juice", ".75 oz. Simple Syrup", "Club soda"], instructions: ["1. Add vodka, lemon juice, and simple syrup", "2. Fill with club soda"])
-        recipeDict["White Russian"] = Recipe.create(drinkName: "White Russian", ingredients: ["1.5 oz. Vodka", ".75 oz. Coffee Liqueur", ".75 oz. Cream"], instructions: ["1. Pour vodka, coffee liqueur, and cream into a glass", "2. Stir and fill with ice"])
-        recipeDict["Irish Coffee"] = Recipe.create(drinkName: "Irish Coffee", ingredients: ["1 cup of Coffee", "1 tbsp. Brown Sugar", "1.5 oz. Whiskey", "Whipped Cream"], instructions: ["1. Add hot coffee and sugar to a mug", "2.Add whiskey and stir", "3. Top with whipped cream"])
-        recipeDict["Manhattan"] = Recipe.create(drinkName: "Manhattan", ingredients: ["2 oz. Bourbon", "1 oz. Sweet Vermouth", "3 dashes bitter"], instructions: ["1. Add bourbon and vermouth to a glass with ice", "2. Add bitters and stir"])
+        recipeDict["Moscow Mule"] = Recipe.create(drinkName: "Moscow Mule", ingredients: ["1.5 oz. Vodka", "4 oz. Ginger Beer", "Lime Juice"], instructions: ["1. Put  ginger beer, vodka and lime juice in a copper mug", "2. Add 2-3 ice cubes and stir"], imageName: "moscowMule")
+        recipeDict["Old Fashioned"] = Recipe.create(drinkName: "Old Fashioned", ingredients: ["2 oz. Bourbon", "1 tsp sugar", "splash of club soda", "4 dashes bitters"], instructions: ["1. Muddle bitters, sugar, orange wheel, cherry, and soda", "2. Remove the orange and fill with ice", "3. Pour in bourbon"], imageName: "oldFashioned")
+        recipeDict["Mai Tai"] = Recipe.create(drinkName: "Mai Tai", ingredients: ["1.5 oz. Spiced Rum", "1 oz. Coconut Rum", "1 tsp. Genadine", "3 oz. Pineapple Juice", "2 oz. Orange Juice"], instructions: ["1. Combine all ingredients in a shaker with ice", "2. Shake vigorously and pour into a glass"], imageName: "maiTai")
+        recipeDict["Death in the Afternoon"] = Recipe.create(drinkName: "Death in the Afternoon", ingredients: ["1.5 oz. Absinthe", "4 oz. Champagne"], instructions: ["1. Pour absinthe into champagne flute"], imageName: "deathInTheAfternoon")
+        recipeDict["Daquiri"] = Recipe.create(drinkName: "Daquiri", ingredients: ["1.5 oz. light rum", ".75 oz. lime juice", ".25 oz. simple syrup"], instructions: ["1. Pour the rum, lime juice, and simple syrup into shaker", "2. Shake well", "3. Strain into a glass"], imageName: "daquiri")
+        recipeDict["Tequila Sunrise"] = Recipe.create(drinkName: "Tequila Sunrise", ingredients: ["1.5 oz. Tequila", "4 oz. orange juice", "1 splash grenadine"], instructions: ["1. Add tequila and orange juice to a glass", "2. Float grenadine on top"], imageName: "tequilaSunrise")
+        recipeDict["Cherry Collins"] = Recipe.create(drinkName: "Cherry Collins", ingredients: ["2 oz. Cherry Vodka", ".75 oz. Lemon Juice", ".75 oz. Simple Syrup", "Club soda"], instructions: ["1. Add vodka, lemon juice, and simple syrup", "2. Fill with club soda"], imageName: "cherryCollins")
+        recipeDict["White Russian"] = Recipe.create(drinkName: "White Russian", ingredients: ["1.5 oz. Vodka", ".75 oz. Coffee Liqueur", ".75 oz. Cream"], instructions: ["1. Pour vodka, coffee liqueur, and cream into a glass", "2. Stir and fill with ice"], imageName: "whiteRussian")
+        recipeDict["Irish Coffee"] = Recipe.create(drinkName: "Irish Coffee", ingredients: ["1 cup of Coffee", "1 tbsp. Brown Sugar", "1.5 oz. Whiskey", "Whipped Cream"], instructions: ["1. Add hot coffee and sugar to a mug", "2.Add whiskey and stir", "3. Top with whipped cream"], imageName: "irishCoffee")
+        recipeDict["Manhattan"] = Recipe.create(drinkName: "Manhattan", ingredients: ["2 oz. Bourbon", "1 oz. Sweet Vermouth", "3 dashes bitter"], instructions: ["1. Add bourbon and vermouth to a glass with ice", "2. Add bitters and stir"], imageName: "manhattan")
         
         PersistenceService.shared.loadAlcohols()
         print("NUMBER OF DRINKS")
@@ -74,7 +74,7 @@ class RecipesTableViewController: UITableViewController
             {
                 print("INSIDE MORE")
                 print(each.alcoholName)
-                recipeDict[each.alcoholName] = Recipe.create(drinkName: each.alcoholName, ingredients: each.alcoholList.components(separatedBy: "\n"), instructions: [""])
+                recipeDict[each.alcoholName] = Recipe.create(drinkName: each.alcoholName, ingredients: each.alcoholList.components(separatedBy: "\n"), instructions: [""], imageName: "mixedUpIcon")
             }
         }
     }

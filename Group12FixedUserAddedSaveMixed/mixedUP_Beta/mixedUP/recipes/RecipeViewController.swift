@@ -17,13 +17,15 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var procedureTitle: UILabel!
     @IBOutlet weak var themeSegmentedControl: UISegmentedControl!
     
-    var recipe = Recipe(drinkName: "", ingredients: [], instructions: [])
+    @IBOutlet weak var drinkImage: UIImageView!
+    var recipe = Recipe(drinkName: "", ingredients: [], instructions: [], imageName: "mixedUp Icon")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drinkTitle.text = recipe.returnName()
         ingredientsList.text = recipe.returnIngredients()
         instructions.text = recipe.returnInstructions()
+        drinkImage.image = UIImage(named: recipe.getImageName())
         // Do any additional setup after loading the view.
         
         // change to dark theme if it is active
