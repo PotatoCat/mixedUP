@@ -152,7 +152,7 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
         
         numDrinksText.text = String(drinkCount)
         
-        updateAlertTest()
+        updateAlertText()
 
         
     }
