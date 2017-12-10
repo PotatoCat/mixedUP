@@ -52,7 +52,7 @@ class GamesTableViewController: UITableViewController {
         // change to dark theme if it is active
         if(ThemeChanger.theme == "dark"){
             cell.backgroundColor = ThemeChanger.backgroundDark
-            cell .textLabel?.textColor = ThemeChanger.titleColorDark
+            cell.textLabel?.textColor = ThemeChanger.titleColorDark
         }
         return cell
     }

@@ -32,6 +32,8 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     var weight: Double = 90
     var loggedInAccountInformation: UserData? = nil
     var alertController:UIAlertController? = nil
+    var defaultVolume : Double = 6.0
+    var timerActive: Bool = false
 
     
     
@@ -43,8 +45,8 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     {
         super.viewDidLoad()
         loggedInAccountInformation = PersistenceService.shared.currentLoggedInUserInfo
-        weightTextLabel.text = "\(String(weight)) lbs"
-        genderTextLabel.text = gender
+        weightTextLabel.text = "Weight: \(String(weight)) lbs"
+        genderTextLabel.text = "Sex: \(gender)"
         createDrinksList()
         drinksList = Array(drinksDict.keys)
         // Keyboard Dismissal
@@ -58,7 +60,7 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
             if(loggedInAccountInformation?.weight != "")
             {
                 weight = Double(Int(loggedInAccountInformation!.weight)!)
-                weightTextLabel.text = "\(String(weight)) lbs"
+                weightTextLabel.text = "Weight: \(String(weight)) lbs"
             }
             else
             {
@@ -67,7 +69,7 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
             if(loggedInAccountInformation?.gender != "")
             {
                 gender = (loggedInAccountInformation?.gender)!
-                genderTextLabel.text = gender
+                genderTextLabel.text = "Sex: \(gender)"
             }
             else
             {
@@ -91,50 +93,79 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.didReceiveMemoryWarning()
     }
     @IBAction func startTime(_ sender: Any) {
+        timerActive = true
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate
-    }
-   
-    @IBAction func stopTime(_ sender: Any) {
-        timer.invalidate()
-        timer == nil
         drinkCount = 0
         numDrinksText.text = String(drinkCount)
         bac = 0
         let bacString = String(format: "%.3f", bac)
         bacText.text = bacString + "%"
+        
+    }
+   
+    @IBAction func stopTime(_ sender: Any) {
+        timer.invalidate()
+        //timer = nil
+        drinkCount = 0
+        numDrinksText.text = String(drinkCount)
+        //bac = 0
+        //let bacString = String(format: "%.3f", bac)
+        //bacText.text = bacString + "%"
+        timerActive = false
+        updateAlertText()
     }
     
     @IBAction func addDrink(_ sender: Any) {
         
-        if pickerSelected == true {
-            let drinkAmount = drinksDict[picked]?.alcAmount
-            bacCalculator(amount: drinkAmount!, weight: weight, gender: gender, time: hours)
+        if(!timerActive){
+            incorrectInfo(messageTitle: "Error", textMessage: "Timer not active. Please start the timer first!")
+        }
+        else if pickerSelected == true {
+            let drinkAmount = (drinksDict[picked]?.alcAmount)! * defaultVolume
+            bacCalculator(amount: drinkAmount, weight: weight, gender: gender, time: hours)
             let bacString = String(format: "%.3f", bac)
             bacText.text = bacString + "%"
             pickerSelected = false
+            drinkCount += 1
         }
-        else {
+        else if(volText.text != "") {
             let vol = volText.text
             let volNum = (vol as! NSString).doubleValue
             let proof = proofText.text
             let proofNum = (proof as! NSString).doubleValue
-            let drinkAmount = addDrinkAmt(vol: volNum, percent: proofNum)
-            bacCalculator(amount: drinkAmount, weight: weight, gender: gender, time: hours)
-            let bacString = String(format: "%.3f", bac)
-            bacText.text = bacString + "%"
+            
+            if(volNum == 0.0 || proofNum == 0){
+                incorrectInfo(messageTitle: "Error", textMessage: "Invalid input. Please enter numbers above zero.")
+            }
+            else{
+                let drinkAmount = addDrinkAmt(vol: volNum, percent: proofNum)
+                bacCalculator(amount: drinkAmount, weight: weight, gender: gender, time: hours)
+                let bacString = String(format: "%.3f", bac)
+                bacText.text = bacString + "%"
+                drinkCount += 1
+            }
+        }
+        else{
+            incorrectInfo(messageTitle: "Error", textMessage: "Please select a drink from the Picker or Input info for a custom drink")
         }
         
-        
-        drinkCount += 1
         numDrinksText.text = String(drinkCount)
         
+        updateAlertTest()
+
+        
+    }
+    func updateAlertText(){
         if bac > 0.08 {
             alertText.text = "Your estimated BAC is too high to drive!"
             incorrectInfo(messageTitle: "WARNING", textMessage: "Your estimated BAC is too high to drive!")
         }
-        
+        else{
+            alertText.text = "Low estimated BAC"
+        }
     }
+    
     @objc func updateTime() {
         var time = Date().timeIntervalSinceReferenceDate - startTime
         let minutes = UInt8(time / 60.0)
@@ -193,7 +224,7 @@ class drinkTrackerViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let string = "myString"
+        let string = drinksList[row]
         if(ThemeChanger.theme == "dark"){
             return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:ThemeChanger.textColorDark])
         }
