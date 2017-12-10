@@ -38,6 +38,9 @@
 		0A148B791FDCC83A00B55850 /* KingsCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B781FDCC83A00B55850 /* KingsCupViewController.swift */; };
 		0A148B7B1FDCC87300B55850 /* KingsCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B7A1FDCC87300B55850 /* KingsCup.swift */; };
 		0A148B7D1FDCC89B00B55850 /* KingsCupInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B7C1FDCC89B00B55850 /* KingsCupInstructionsViewController.swift */; };
+		0A148B7F1FDCCF6F00B55850 /* NeverEverInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B7E1FDCCF6F00B55850 /* NeverEverInstructionsViewController.swift */; };
+		0A148B811FDCD1AC00B55850 /* NeverHaveIEverGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B801FDCD1AC00B55850 /* NeverHaveIEverGame.swift */; };
+		0A148B831FDCD1EE00B55850 /* NeverEverGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A148B821FDCD1EE00B55850 /* NeverEverGameViewController.swift */; };
 		0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB951FC50F9C00F85591 /* Drinks.swift */; };
 		0A1DCB981FC50FA100F85591 /* drinkTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */; };
 		0A1DCBB01FC5157100F85591 /* PointingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DCBAF1FC5157100F85591 /* PointingGame.swift */; };
@@ -85,6 +88,9 @@
 		0A148B781FDCC83A00B55850 /* KingsCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingsCupViewController.swift; sourceTree = "<group>"; };
 		0A148B7A1FDCC87300B55850 /* KingsCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingsCup.swift; sourceTree = "<group>"; };
 		0A148B7C1FDCC89B00B55850 /* KingsCupInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingsCupInstructionsViewController.swift; sourceTree = "<group>"; };
+		0A148B7E1FDCCF6F00B55850 /* NeverEverInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverEverInstructionsViewController.swift; sourceTree = "<group>"; };
+		0A148B801FDCD1AC00B55850 /* NeverHaveIEverGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverHaveIEverGame.swift; sourceTree = "<group>"; };
+		0A148B821FDCD1EE00B55850 /* NeverEverGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverEverGameViewController.swift; sourceTree = "<group>"; };
 		0A1DCB951FC50F9C00F85591 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		0A1DCB971FC50FA000F85591 /* drinkTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinkTrackerViewController.swift; sourceTree = "<group>"; };
 		0A1DCBAF1FC5157100F85591 /* PointingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointingGame.swift; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 				0A148B781FDCC83A00B55850 /* KingsCupViewController.swift */,
 				0A148B7A1FDCC87300B55850 /* KingsCup.swift */,
 				0A148B7C1FDCC89B00B55850 /* KingsCupInstructionsViewController.swift */,
+				0A148B7E1FDCCF6F00B55850 /* NeverEverInstructionsViewController.swift */,
+				0A148B801FDCD1AC00B55850 /* NeverHaveIEverGame.swift */,
+				0A148B821FDCD1EE00B55850 /* NeverEverGameViewController.swift */,
 			);
 			path = games;
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 				0A148B791FDCC83A00B55850 /* KingsCupViewController.swift in Sources */,
 				0A1EB3E11FA96A2500E5418E /* RecipeViewController.swift in Sources */,
 				0108B9AE1FC33737007BBE2A /* CreatedRandomDrinkViewController.swift in Sources */,
+				0A148B831FDCD1EE00B55850 /* NeverEverGameViewController.swift in Sources */,
 				0A148B7B1FDCC87300B55850 /* KingsCup.swift in Sources */,
 				017880411FA8060B007E040B /* FeaturesSettingsViewController.swift in Sources */,
 				0A1DCBB21FC5159B00F85591 /* PointingGameViewController.swift in Sources */,
@@ -398,6 +408,7 @@
 				0108B9AC1FC289C1007BBE2A /* AlcoholTableViewCell.swift in Sources */,
 				0178802E1FA7B220007E040B /* mixedUP.xcdatamodeld in Sources */,
 				0108B9A41FC272D5007BBE2A /* InstructionViewController.swift in Sources */,
+				0A148B7F1FDCCF6F00B55850 /* NeverEverInstructionsViewController.swift in Sources */,
 				0108B9B01FC4DF62007BBE2A /* MixinTableViewCell.swift in Sources */,
 				017880431FA80786007E040B /* MenuSelectViewController.swift in Sources */,
 				0108B9A61FC272FF007BBE2A /* GeneratorViewController.swift in Sources */,
@@ -408,6 +419,7 @@
 				0108B9A01FB18F43007BBE2A /* PersistenceService.swift in Sources */,
 				0A1DCB961FC50F9C00F85591 /* Drinks.swift in Sources */,
 				0108B9B21FC4E117007BBE2A /* MixinSelectTableViewController.swift in Sources */,
+				0A148B811FDCD1AC00B55850 /* NeverHaveIEverGame.swift in Sources */,
 				0A1EB3E01FA96A2500E5418E /* ThemeChanger.swift in Sources */,
 				01AD2A171FDC299D00CECDD8 /* MixedData.swift in Sources */,
 				0178803F1FA805FC007E040B /* AppearanceSettingsViewController.swift in Sources */,
